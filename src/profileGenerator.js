@@ -67,7 +67,7 @@ const createCard = function(data) {
         const worker = data[a];
         // This line should help get the role of each individual on the team 
         // this determnines which card is created based on the role
-        const role = employee.getrole();
+        const role = employee.getRole();
 
         // here we determine which card is created based on role
         if (role === "Manager") {

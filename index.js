@@ -9,7 +9,6 @@ const createCard = require('./src/profileGenerator');
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
-const { generate } = require('rxjs');
 
 //This is where team is stored
 const profileArray = [];
@@ -43,26 +42,27 @@ const recruitMan = () => {
     // Once the above prompts have been asnwered it gets stored 
     // and then creats a new object using the answer as parameters
     .then(managerInfo => {
-        const {name, id, email, officNum} = managerInfo;
+        const {name, id, email, officeNum} = managerInfo;
         const manager = new Manager(name, id, email, officeNum);
         console.log(manager);
         profileArray.push(manager);
     })
-}
+};
 
 // These questions are for Employees and can be used to add to Engineers or Intern employees
 const recruitEm = () => {
     return inquirer.prompt([
         {
+            // This how to make choices on the node.js
             type: 'list',
             name: 'role',
             message: "What is the employees's role?",
-            choice: ['Engineer', "Intern"]
+            choices: ['Engineer', "Intern"]
         },
         {
             type: 'input',
             name: 'name',
-            message: "What is the employee's ID?"
+            message: "What is the employee's name?"
         },
         {
             type: 'input',
@@ -77,7 +77,8 @@ const recruitEm = () => {
         {
             type: 'input',
             name: 'github',
-            message: "What is the employee's github?"
+            message: "What is the employee's github?",
+            when: (input) => input.role === "Engineer"
         },
         {
             type: 'input',
@@ -102,13 +103,16 @@ const recruitEm = () => {
             employee = new Engineer(name, id, email, github);
             console.log(employee);
         }
-        if (role === "Intern"){
-            employee = new Intern(name, ide, email, school);
+        else if (role === "Intern"){
+            employee = new Intern(name, id, email, school);
             console.log(employee);
         }
+
         profileArray.push(employee);
+
+        // This checks to user wants to add additional team members
         if (addEmployee) {
-            return addEmployee(profileArray);
+            return recruitEm(profileArray);
         } else {
             return profileArray;
         }
