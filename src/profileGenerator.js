@@ -1,5 +1,3 @@
-const Employee = require("../lib/Employee");
-
 // this is the template for the manager profile card
 const managerCard = function(Manager) {
     return `
@@ -11,7 +9,7 @@ const managerCard = function(Manager) {
             </div>
             <div class="cardMain">
                 <p class="id">ID: ${Manager.id}</p>
-                <p class="email">Email: <a href="mailto:${Manager.email}">${manager.email}</a></p>
+                <p class="email">Email: <a href="mailto:${Manager.email}">${Manager.email}</a></p>
                 <p class="office">Office Number: ${Manager.officeNum}</p>
             </div>
         </div>
@@ -30,7 +28,7 @@ const internCard = function(Intern) {
             <div class="cardMain">
                 <p class="id">ID: ${Intern.id}</p>
                 <p class="email">Email: <a href="mailto:${Intern.email}">${manager.email}</a></p>
-                <p class="school">School: ${Intern.officeNum}</p>
+                <p class="school">School: ${Intern.school}</p>
             </div>
         </div>
     </div>`
@@ -47,7 +45,7 @@ const engineerCard = function(Engineer) {
             </div>
             <div class="cardMain">
                 <p class="id">ID: ${Engineer.id}</p>
-                <p class="email">Email: <a href="mailto:${Engineer.email}">${manager.email}</a></p>
+                <p class="email">Email: <a href="mailto:${Engineer.email}">${Engineer.email}</a></p>
                 <p class="github">Github: <a href="https://github.com/${Engineer.github}">${Engineer.github}</a></p>
             </div>
         </div>
@@ -67,21 +65,21 @@ const createCard = function(data) {
         const worker = data[a];
         // This line should help get the role of each individual on the team 
         // this determnines which card is created based on the role
-        const role = employee.getRole();
+        const role = worker.getRole();
 
         // here we determine which card is created based on role
         if (role === "Manager") {
-            const manCard = managerCard(employee);
+            const manCard = managerCard(worker);
             teamArray.push(manCard);
         }
 
         if (role === "Engineer") {
-            const engCard = engineerCard(employee);
+            const engCard = engineerCard(worker);
             teamArray.push(engCard);
         }
 
         if (role === "Intern") {
-            const intCard = internCard(employee);
+            const intCard = internCard(worker);
             teamArray.push(intCard);
         }
     }
