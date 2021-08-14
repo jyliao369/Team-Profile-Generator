@@ -2,10 +2,10 @@
 const managerCard = function(Manager) {
     return `
     <div>
-        <div>
+        <div class = "card">
             <div class="cardHead">
                 <h3>${Manager.name}</h3>
-                <h4>Manager</h4><i class="material-icons">groups</i>
+                <h4>☕ Manager</h4>
             </div>
             <div class="cardMain">
                 <p class="id">ID: ${Manager.id}</p>
@@ -20,14 +20,14 @@ const managerCard = function(Manager) {
 const internCard = function(Intern) {
     return `
     <div>
-        <div>
+        <div class = "card">
             <div class="cardHead">
                 <h3>${Intern.name}</h3>
-                <h4>Manager</h4><i class="material-icons">groups</i>
+                <h4>🎓 Intern</h4>
             </div>
             <div class="cardMain">
                 <p class="id">ID: ${Intern.id}</p>
-                <p class="email">Email: <a href="mailto:${Intern.email}">${manager.email}</a></p>
+                <p class="email">Email: <a href="mailto:${Intern.email}">${Intern.email}</a></p>
                 <p class="school">School: ${Intern.school}</p>
             </div>
         </div>
@@ -38,10 +38,10 @@ const internCard = function(Intern) {
 const engineerCard = function(Engineer) {
     return `
     <div>
-        <div>
+        <div class = "card">
             <div class="cardHead">
                 <h3>${Engineer.name}</h3>
-                <h4>Manager</h4><i class="material-icons">groups</i>
+                <h4>👓 Engineer</h4>
             </div>
             <div class="cardMain">
                 <p class="id">ID: ${Engineer.id}</p>
@@ -100,26 +100,24 @@ const generateTeamPage = function(employeeCards) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Team Profile</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Public+Sans:300i,300,500&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
-        <header>
-            <nav class="navbar" id="navbar">
-                <span class="navbar-brand mb-0 h1 w-100 text-center" id="navbar-text">Team Profile</span>
-            </nav>
+        <header id="header">
+            <h1>Team Profile</h1>
         </header>
+
         <main>
-            <div class="container">
-                <div class="row justify-content-center" id="team-cards">
-                    ${employeeCards}
+            <div id = "testbox">
+                <div id = "container">
+                    <div id = "containerCard">
+                        ${employeeCards}
+                    </div>
                 </div>
-            </div>
+            <div>
         </main>
+
     </body>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
