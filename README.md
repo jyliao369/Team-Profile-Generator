@@ -55,11 +55,12 @@
 
   ## Demonstration
   -- Demonstration of the application in VS Code --
-  ![Demonstration](screenshots/Demo-VS.gif)
+  ![Demonstration](screenshots/Demo-Class Tests.gif)
 
 
   -- Demonstration of Class Testing --
-  ![Class Testing](screenshots/)
+  ![Class Testing](screenshots/Demo VS.gif)
+
 
 
   ## Screenshots
@@ -75,9 +76,12 @@
   ![Test Passed](screenshots/screenshot2.JPG)
 
 
+  -- Final Application --
+  ![Final Application](screenshots/screenshot4.JPG)
+
   ## Live Links
 
-  Github Repo: 
+  Github Repo: https://github.com/jyliao369/Team-Profile-Generator
 
   Deployed Link:
   
