@@ -55,11 +55,11 @@
 
   ## Demonstration
   -- Demonstration of the application in VS Code --
-  ![Demonstration](screenshots/Demo-Class Tests.gif)
+  ![Demonstration](screenshots/Demo-Class_Tests.gif)
 
 
   -- Demonstration of Class Testing --
-  ![Class Testing](screenshots/Demo VS.gif)
+  ![Class Testing](screenshots/Demo-VS.gif)
 
 
 
