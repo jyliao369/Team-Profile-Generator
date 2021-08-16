@@ -54,13 +54,14 @@
 
 
   ## Demonstration
-  -- Demonstration of the application in VS Code --
-  ![Demonstration](screenshots/Demo-Class_Tests.gif)
-
-
   -- Demonstration of Class Testing --
-  ![Class Testing](screenshots/Demo-VS.gif)
-
+  ![Demonstration](screenshots/Demo-VS.gif)
+  
+  
+  
+  -- Demonstration of the application in VS Code --
+  ![Class Testing](screenshots/Demo-Class_Tests.gif)
+  
 
 
   ## Screenshots
