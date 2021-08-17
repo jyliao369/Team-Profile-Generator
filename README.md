@@ -83,6 +83,3 @@
   ## Live Links
 
   Github Repo: https://github.com/jyliao369/Team-Profile-Generator
-
-  Deployed Link:
-  
